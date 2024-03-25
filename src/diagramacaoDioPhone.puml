@@ -1,0 +1,37 @@
+@startuml
+
+package "Telefone" {
+    interface Telefone {
+        +fazerChamada(numero: String)
+        +encerrarChamada()
+        +historicoChamadas()
+    }
+}
+
+package "InternetBrowser" {
+    interface InternetBrowser {
+        +recarregarPagina()
+        +historico()
+        +downloads()
+    }
+}
+
+package "MusicPlayer" {
+    interface MusicPlayer {
+        +tocarMusica(nomeMusica: String)
+        +pararMusica()
+        +musicList()
+    }
+}
+
+package "Smartphone" {
+    class Smartphone {
+
+    }
+}
+
+Smartphone --|> Telefone.Telefone
+Smartphone --|> InternetBrowser.InternetBrowser
+Smartphone --|> MusicPlayer.MusicPlayer
+
+@enduml
